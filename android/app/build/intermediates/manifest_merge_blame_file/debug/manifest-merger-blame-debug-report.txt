@@ -1,0 +1,80 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.location_indoor_app"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+13-->[com.facebook.flipper:flipper:0.37.0] /home/abitencourt/.gradle/caches/transforms-2/files-2.1/623174cd4892d9fb924ac44b102b25c0/flipper-0.37.0/AndroidManifest.xml:16:5-76
+13-->[com.facebook.flipper:flipper:0.37.0] /home/abitencourt/.gradle/caches/transforms-2/files-2.1/623174cd4892d9fb924ac44b102b25c0/flipper-0.37.0/AndroidManifest.xml:16:22-73
+14    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+14-->[:react-native-wifi-reborn] /home/abitencourt/Documents/projects-university/location-indoor-mobile/node_modules/react-native-wifi-reborn/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-76
+14-->[:react-native-wifi-reborn] /home/abitencourt/Documents/projects-university/location-indoor-mobile/node_modules/react-native-wifi-reborn/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-73
+15    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+15-->[:react-native-wifi-reborn] /home/abitencourt/Documents/projects-university/location-indoor-mobile/node_modules/react-native-wifi-reborn/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-79
+15-->[:react-native-wifi-reborn] /home/abitencourt/Documents/projects-university/location-indoor-mobile/node_modules/react-native-wifi-reborn/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:22-76
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[:react-native-wifi-reborn] /home/abitencourt/Documents/projects-university/location-indoor-mobile/node_modules/react-native-wifi-reborn/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-79
+16-->[:react-native-wifi-reborn] /home/abitencourt/Documents/projects-university/location-indoor-mobile/node_modules/react-native-wifi-reborn/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:22-76
+17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+17-->[com.thanosfisherman.wifiutils:wifiutils:1.6.1] /home/abitencourt/.gradle/caches/transforms-2/files-2.1/bda82442c56cfc181f6d5bae9439f76f/wifiutils-1.6.1/AndroidManifest.xml:11:5-79
+17-->[com.thanosfisherman.wifiutils:wifiutils:1.6.1] /home/abitencourt/.gradle/caches/transforms-2/files-2.1/bda82442c56cfc181f6d5bae9439f76f/wifiutils-1.6.1/AndroidManifest.xml:11:22-76
+18
+19    <application
+19-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:6:5-25:19
+20        android:name="com.location_indoor_app.MainApplication"
+20-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:7:7-38
+21        android:allowBackup="false"
+21-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:11:7-34
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.1.0] /home/abitencourt/.gradle/caches/transforms-2/files-2.1/639e914bfc1efa21e36199d3ff2c5eef/core-1.1.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:9:7-41
+25        android:label="@string/app_name"
+25-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:8:7-39
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:10:7-52
+27        android:theme="@style/AppTheme"
+27-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:12:7-38
+28        android:usesCleartextTraffic="true" >
+28-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/debug/AndroidManifest.xml:7:18-53
+29        <activity
+29-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:13:7-23:18
+30            android:name="com.location_indoor_app.MainActivity"
+30-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:14:9-37
+31            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+31-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:16:9-86
+32            android:label="@string/app_name"
+32-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:15:9-41
+33            android:launchMode="singleTask"
+33-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:17:9-40
+34            android:windowSoftInputMode="adjustResize" >
+34-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:18:9-51
+35            <intent-filter>
+35-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:19:9-22:25
+36                <action android:name="android.intent.action.MAIN" />
+36-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:20:13-65
+36-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:20:21-62
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:21:13-73
+38-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:21:23-70
+39            </intent-filter>
+40        </activity>
+41        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+41-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:24:7-84
+41-->/home/abitencourt/Documents/projects-university/location-indoor-mobile/android/app/src/main/AndroidManifest.xml:24:17-81
+42    </application>
+43
+44</manifest>
