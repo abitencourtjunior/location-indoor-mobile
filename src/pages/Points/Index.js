@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Text, View, StyleSheet, StatusBar, TouchableOpacity, ScrollView,
 } from 'react-native';
@@ -6,16 +6,35 @@ import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
 import WifiManager from 'react-native-wifi-reborn';
 import { COLORS } from '../../config/theme';
-import { requestWifiPermission } from '../../services/permission';
+
+import api from '../../services/api';
+
+const handleMountRequest = (results) => {
+  const wifiArray = JSON.parse(results);
+  wifiArray.map((data) => {
+    /* eslint no-param-reassign: ["error", { "props": false }] */
+    data.bssid = data.BSSID;
+    delete data.BSSID;
+    data.ssid = data.SSID;
+    delete data.SSID;
+  });
+  return wifiArray;
+};
 
 const Points = () => {
   const getAllNetworks = async () => {
-    const results = await WifiManager.loadWifiList();
-    const wifiArray = JSON.parse(results);
-    wifiArray.map((value, index) => {
-      console.log(`Wifi ${index + 1} - ${value.SSID}`);
-      console.log(value);
-    });
+    const results = await WifiManager.reScanAndLoadWifiList();
+    try {
+      setWireless(handleMountRequest(results));
+      await api.post('/v1/wireless', wireless).then((response) => {
+        const { name } = response.data;
+        if (name !== undefined || name !== null) {
+          setLocation(name);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
   const navigation = useNavigation();
 
@@ -35,6 +54,9 @@ const Points = () => {
     navigation.navigate('Info');
   };
 
+  const [wireless, setWireless] = useState({});
+  const [location, setLocation] = useState('');
+
   return (
     <>
       <View style={styles.container}>
@@ -49,14 +71,15 @@ const Points = () => {
           Nesta tela iremos lhe ajudar a localizar-se no ambiente!
         </Text>
 
-        <TouchableOpacity style={styles.search} onPress={requestWifiPermission}>
-          <Icon name="wifi" size={36} color={COLORS.YELLOW} />
-          <Text style={styles.descriptionIcon} />
-        </TouchableOpacity>
         <TouchableOpacity style={styles.search} onPress={getAllNetworks}>
           <Icon name="wifi" size={36} color={COLORS.YELLOW} />
           <Text style={styles.descriptionIcon} />
         </TouchableOpacity>
+        <View style={styles.containerLocation}>
+          <Text style={styles.title}>
+            {`Sua posição é aqui ${location}`}
+          </Text>
+        </View>
 
       </View>
       <View style={styles.itemsContainer}>
@@ -94,6 +117,13 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 32,
     paddingTop: 20 + StatusBar.currentHeight,
+  },
+  containerLocation: {
+    marginTop: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    flexDirection: 'column',
   },
 
   title: {

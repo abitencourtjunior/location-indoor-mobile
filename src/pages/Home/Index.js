@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   View, ImageBackground, StyleSheet, Text, KeyboardAvoidingView, Platform,
+  PermissionsAndroid,
 } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
@@ -9,6 +10,7 @@ import { Icon } from '../../components/Icons/Index';
 import homeBackground from '../../assets/home-background.png';
 import Logo from '../../components/Logo/Index';
 import { COLORS } from '../../config/theme';
+import { requestWifiPermission } from '../../services/permission';
 
 const titleSystem = 'Sistema de localização de pessoas com rede sem fio';
 const description = 'Ajudamos pessoas que tenham deficiência visual a se localizarem em ambiente local privado';
@@ -16,8 +18,15 @@ const description = 'Ajudamos pessoas que tenham deficiência visual a se locali
 const Home = () => {
   const navigation = useNavigation();
 
+  const goPoints = () => {
+    if (PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION)) {
+      return handleNavigationToLogin();
+    }
+    return requestWifiPermission();
+  };
+
   const handleNavigationToLogin = () => {
-    navigation.navigate('Login');
+    navigation.navigate('Points');
   };
 
   return (
@@ -38,7 +47,7 @@ const Home = () => {
 
         <View style={styles.footer}>
 
-          <RectButton style={styles.button} onPress={handleNavigationToLogin}>
+          <RectButton style={styles.button} onPress={goPoints}>
             <Icon name="arrow-right" color="#FFF" size={24} />
             <Text style={styles.buttonText}>
               Login

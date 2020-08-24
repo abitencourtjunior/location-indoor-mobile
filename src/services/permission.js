@@ -15,10 +15,8 @@ export const requestWifiPermission = async () => {
     );
 
     if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-      console.log('Passou');
       return true;
     }
-    console.log('Não Passou');
     return false;
   } catch (err) {
     console.warn(err);
